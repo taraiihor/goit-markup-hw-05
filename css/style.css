@@ -39,6 +39,11 @@ ul {
 }
 
 .page-header {
+  border-bottom: 1px solid #ececec;
+}
+
+.header-hiade {
+  border-bottom: 0px;
 }
 
 .continer {
@@ -77,6 +82,21 @@ ul {
   margin-left: 50px;
 }
 
+.site-nav .item {
+  position: relative;
+}
+
+.current::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background-color: var(--accent-color);
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
+
 .site-nav .link {
   display: block;
   padding-top: 32px;
@@ -88,6 +108,8 @@ ul {
   font-size: 14px;
   line-height: 1.15;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link:hover,
@@ -180,6 +202,7 @@ ul {
   text-align: center;
   letter-spacing: 0.06em;
 }
+
 /* секция особености */
 .section-features .title {
   color: var(--title-text-color);
@@ -317,10 +340,12 @@ ul {
 }
 
 .section-team-card .card {
-  /* overflow: hidden; */
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
-  /* border-radius: 4px; */
+}
+
+.social-mardgen + .social-mardgen {
+  margin-left: 10px;
 }
 
 .section-team-card .card + .card {
@@ -344,63 +369,19 @@ ul {
   justify-content: center;
 }
 
-.icon-instagram {
-  display: block;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  padding: 12px;
-  fill: #afb1b8;
-}
-
-.icon-instagram:hover {
-  background-color: var(--accent-color);
-  fill: var(--button);
-}
-
-.icon-twitter {
-  display: block;
+.icon-social-team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   fill: #afb1b8;
-  padding: 12px;
-  margin-left: 11px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-twitter:hover {
-  background-color: var(--accent-color);
-  fill: var(--button);
-}
-
-.icon-facebook {
-  display: block;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  padding: 12px;
-  fill: #afb1b8;
-
-  margin-left: 11px;
-}
-
-.icon-facebook:hover {
-  background-color: var(--accent-color);
-  fill: var(--button);
-}
-
-.icon-linkedin {
-  display: block;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  padding: 12px;
-  fill: #afb1b8;
-
-  margin-left: 11px;
-}
-
-.icon-linkedin:hover {
+.icon-social-team:hover {
   background-color: var(--accent-color);
   fill: var(--button);
 }
@@ -453,6 +434,8 @@ ul {
   justify-content: center;
   align-items: center;
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-logo:hover {
@@ -467,11 +450,13 @@ ul {
   font-size: 22px;
   line-height: 1.18;
   letter-spacing: 0.03em;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 .footer-t {
   display: flex;
   justify-content: space-between;
+  padding-top: 48px;
+  padding-bottom: 28px;
 }
 
 .footer-list {
@@ -505,6 +490,7 @@ ul {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   fill: white;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-footer:hover {
@@ -513,7 +499,7 @@ ul {
 
 .address .text {
   margin: 0px;
-  padding-bottom: 9px;
+  padding-top: 10px;
   color: var(--button);
   font-style: normal;
   font-weight: normal;
@@ -523,7 +509,7 @@ ul {
 }
 
 .address .mail {
-  padding-bottom: 9px;
+  padding-top: 9px;
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
   font-weight: normal;
@@ -594,7 +580,6 @@ ul {
 .element:hover {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
-  /* border-radius: 5px; */
 }
 
 .items-color {
@@ -606,8 +591,6 @@ ul {
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
-  /* border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px; */
 }
 
 .items .title {
@@ -631,10 +614,23 @@ ul {
   letter-spacing: 0.03em;
 }
 
+.instruktion-card:focus,
+.instruktion-card:hover .text-text {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+
+.element-hiade {
+  position: relative;
+  overflow: hidden;
+}
+
 .items .text-text {
+  position: absolute;
+  display: block;
+  width: 100%;
   margin: 0px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 63px 24px;
   background-color: var(--accent-color);
   color: var(--button);
   font-style: normal;
@@ -642,7 +638,11 @@ ul {
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
+  opacity: 0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* кнопки на секції портфоліо  */
 .button-items {
   display: flex;
   justify-content: center;
@@ -668,6 +668,8 @@ ul {
   padding-bottom: 6px;
   padding-left: 22px;
   padding-right: 22px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -682,5 +684,4 @@ ul {
 /* для підсвідки білого тексту в футері в подальшому заберу */
 .bg {
   background-color: #2f303a;
-  padding-top: 56px;
 }
