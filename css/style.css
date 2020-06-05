@@ -382,6 +382,7 @@ ul {
 }
 
 .icon-social-team:hover {
+  border-radius: 50%;
   background-color: var(--accent-color);
   fill: var(--button);
 }
