@@ -141,6 +141,7 @@ ul {
   line-height: 1.15;
   letter-spacing: 0.02em;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail-nav .link-mail:hover,
@@ -569,6 +570,7 @@ ul {
   /* border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   overflow: hidden; */
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .element:not(:nth-child(3n)) {
@@ -617,7 +619,7 @@ ul {
   letter-spacing: 0.03em;
 }
 
-.instruktion-card:focus,
+.instruktion-card:focus .text-text,
 .instruktion-card:hover .text-text {
   transform: translateY(-100%);
   opacity: 1;
